@@ -1,0 +1,53 @@
+<script>
+        
+    var arrayElementos = [1, 4, true, 'string', 'juan',  10, 2, 1, 4.5,-1,-10];
+    var arrayElementosN = new Array();
+    var cadenaOrdenN = '';
+      
+    var longitudE = arrayElementos.length
+    console.log('El vector a ordenar: {' + arrayElementos + '} contiene ' + longitudE + ' elementos.');
+
+    var x = 0;
+    for (let i = 0; i <= arrayElementos.length; i++)
+    {
+        if (typeof(arrayElementos[i]) === 'number' )
+        {
+           arrayElementosN[x] = arrayElementos[i];   
+           x = x+1;
+        }
+    }
+
+    var longitudN = arrayElementosN.length;
+    console.log('Se encontraron ' + longitudN + ' elementos numéricos. Vector a ordenar: ' + arrayElementosN );
+
+    console.log('Se muestra la etapa de Ordenamiento:');    
+    
+    for (var i=0; i<arrayElementosN.length-1; i++)
+    {
+        var valorMin = i;
+        for (var j=i+1; j<arrayElementosN.length; j++)
+        {
+            if (arrayElementosN[valorMin] > arrayElementosN[j])
+            {
+                valorMin = j;
+            }
+        }
+        aux = arrayElementosN[valorMin];
+        arrayElementosN[valorMin] = arrayElementosN[i];
+        arrayElementosN[i] = aux;     
+
+        console.log(arrayElementosN); 
+    }
+
+    for (let  y=0; y<=longitudN-1; y++)
+    {
+       
+        if (y == arrayElementosN.length -1)
+           cadenaOrdenN = cadenaOrdenN + arrayElementosN[y];
+        else
+           cadenaOrdenN = cadenaOrdenN + arrayElementosN[y] + ',' ;    
+    }
+
+    console.log('Se muestra el vector Ordenado: ' + cadenaOrdenN);
+    
+</script>       
