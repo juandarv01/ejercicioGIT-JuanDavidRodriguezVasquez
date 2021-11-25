@@ -1,0 +1,128 @@
+<script>
+
+
+// 1. Condiciones If
+
+    /* var numero1 = 5;
+    var numero2 = 8;
+
+    if (numero1 < numero2){
+        console.log("numero1 no es mayor a numero2");
+    }
+
+    if (numero2 > 0){
+        console.log("numero2 es positivo");
+    }
+
+    if (numero1 < 6){
+        console.log("numero1 es negativo o distinto de cero");
+    }
+
+    if (numero1 +1 <= numero2){
+        console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2")
+    }
+ */
+
+// 2.factorial
+
+/* var factorial = 1;
+var numeroF = 4;
+for (let i = 1; i<= numeroF; i++){
+    factorial = factorial * i;
+    
+}
+console.log("El resultado para  " + numeroF + "! es: " + factorial )
+ 
+ */
+
+
+// 3.Par o Impar
+
+/* function parOimpar(numero){
+    if (numero % 2 == 0){
+        console.log("El número " + numero + " es par ");
+    }
+        else{
+            console.log("El número " + numero + " es impar ");
+        }
+    }
+
+
+console.log("llamando a la funcion parOimpar().");
+parOimpar(10001);
+ */
+
+// 4 Es palindrome?
+
+/* function esPalindrome(str) {
+  const strReversed = str.split("").reverse().join("")
+
+  return strReversed === str ? " es palindromo" : " no es palindromo"
+}
+
+palabra = 'osa'
+console.log("La palabra " +  "'" + palabra + "'" + esPalindrome(palabra))
+ */
+
+// 5. Clases y Objetos
+
+class Persona{
+        nombre;
+        edad; 
+
+        obtenerDetalles(){
+            console.log("Mi nombre es: " + this.nombre + " y tengo " + this.edad + " anios de edad");
+        }
+
+        constructor(nombre, edad){
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+
+    }
+
+
+class Estudiante extends Persona{
+   calificacion;
+
+    constructor(calificacion,nombre,edad){
+        super(nombre,edad);
+        this.calificacion = calificacion
+        this.nombre = nombre;
+        this.edad = edad;
+       
+    }
+
+     obtenerDetalles() { 
+        return super.obtenerDetalles()
+      
+     }
+    }
+
+
+ class Profesor extends Persona{
+    asignatura
+    nivel
+
+    constructor(asignatura = "JS", nivel = "básico", calificacion,nombre,edad){
+        super(calificacion,nombre,edad);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+        this.calificacion = calificacion;
+        this.nombre = nombre;
+        this.edad = edad;
+       
+    }
+        obtenerDetalles() { 
+        return super.obtenerDetalles() 
+     }
+
+}
+
+profesor = new Profesor("Java", "primer Nivel", 4,"Juan", 33)
+profesor.obtenerDetalles();
+estudiante = new Estudiante(4);
+console.log("Mi calificacion es de : " + estudiante.calificacion + " puntos");
+
+
+</script>
